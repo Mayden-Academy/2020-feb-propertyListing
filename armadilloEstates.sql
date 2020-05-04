@@ -6,8 +6,8 @@
 # https://github.com/sequelpro/sequelpro
 #
 # Host: 127.0.0.1 (MySQL 5.7.29)
-# Database: armadilloEstates
-# Generation Time: 2020-05-04 10:54:58 +0000
+# Database: armadilloEstate
+# Generation Time: 2020-05-04 13:10:51 +0000
 # ************************************************************
 
 
@@ -32,11 +32,11 @@ CREATE TABLE `properties` (
   `Address2` varchar(255) DEFAULT NULL,
   `Town` varchar(255) DEFAULT NULL,
   `Postcode` varchar(255) DEFAULT NULL,
-  `Desc` text,
+  `Description` text,
   `Beds` int(11) unsigned DEFAULT NULL,
   `Price` int(11) DEFAULT NULL,
   `Image` varchar(255) DEFAULT NULL,
-  `Type` int(11) unsigned DEFAULT NULL,
+  `PropertyType` int(11) unsigned DEFAULT NULL,
   `Status` int(11) unsigned DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
