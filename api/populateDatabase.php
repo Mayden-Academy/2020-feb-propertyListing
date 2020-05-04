@@ -34,9 +34,9 @@ function getArmadillosEstates(): PDO
     return $db;
 }
 
-function insertIntoDB(array $,PDO $db): bool
+function insertIntoPropertiesTable(PDO $db): bool
 {
-    $query = $db->prepare("INSERT INTO `bread` (`name`, `type`, `rating`, `desc`, `imgurl`) VALUES (:name, :type, :rating, :desc, :imgurl);");
-    $ = $query->execute($newBread);
-    return $;
+    $query = $db->prepare("INSERT INTO `properties` (`AgentRef`, `Address1`, `Address2`, `Town`, `Postcode`, `Desc`, `Beds`, `Price`, `Image`, `Type`, `Status`) VALUES (:name, :type, :rating, :desc, :imgurl);");
+    $insertDB = $query->execute($newBread);
+    return $insertDB;
 }
