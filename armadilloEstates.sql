@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.29)
 # Database: armadilloEstates
-# Generation Time: 2020-05-04 13:50:10 +0000
+# Generation Time: 2020-05-04 15:04:42 +0000
 # ************************************************************
 
 
@@ -27,24 +27,24 @@ DROP TABLE IF EXISTS `properties`;
 
 CREATE TABLE `properties` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `AgentRef` varchar(255) DEFAULT NULL,
-  `Address1` varchar(255) DEFAULT NULL,
-  `Address2` varchar(255) DEFAULT NULL,
-  `Town` varchar(255) DEFAULT NULL,
-  `Postcode` varchar(255) DEFAULT NULL,
-  `Description` text,
-  `Beds` int(11) unsigned DEFAULT NULL,
-  `Price` int(11) DEFAULT NULL,
-  `Image` varchar(255) DEFAULT NULL,
-  `PropertyType` int(11) unsigned DEFAULT NULL,
-  `Status` int(11) unsigned DEFAULT NULL,
+  `agentRef` varchar(255) NOT NULL DEFAULT '',
+  `address1` varchar(255) NOT NULL DEFAULT '',
+  `address2` varchar(255) NOT NULL DEFAULT '',
+  `town` varchar(255) NOT NULL DEFAULT '',
+  `postcode` varchar(255) NOT NULL DEFAULT '',
+  `description` text NOT NULL,
+  `beds` int(11) unsigned NOT NULL,
+  `price` int(11) NOT NULL,
+  `image` varchar(255) NOT NULL DEFAULT '',
+  `propertyType` int(11) unsigned NOT NULL,
+  `status` int(11) unsigned NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 LOCK TABLES `properties` WRITE;
 /*!40000 ALTER TABLE `properties` DISABLE KEYS */;
 
-INSERT INTO `properties` (`id`, `AgentRef`, `Address1`, `Address2`, `Town`, `Postcode`, `Description`, `Beds`, `Price`, `Image`, `PropertyType`, `Status`)
+INSERT INTO `properties` (`id`, `agentRef`, `address1`, `address2`, `town`, `postcode`, `description`, `beds`, `price`, `image`, `propertyType`, `status`)
 VALUES
 	(1,'CSL123_100259','Hill Farm','Plough Hill Road','Nuneaton','CV11 6PE','This is a rare opportunity to acquire an exceptionally spacious and extensively renovated freehold detached farmhouse of considerable charm and character, certain parts dating back around 300 and 200 years. <br /><br />An impressive property which really must be viewed internally to be properly appreciated and delightfully situated standing in its own grounds amounting to approximately one acre and some elevations enjoying panoramic views. This substantial property lies in the village of Galley Common, approximately three miles from Nuneaton town centre and is approached by Marlowe close and also has a second right-of-way, both pedestrian and vehicular, from Plough Hill Road.<br /><br />The farmhouse has the benefit of central heating provided by a combination of gas and solid fuel and improvements include rewiring, injection style damp proofing, replacement windows in keeping with the style of the property and replumbing.<br /><br />The generous accommodation, which has a wealth of exposed beams, is arranged both on two and three floors and includes imposing entrance hall with quarry tile flooring, cellarage, delightful sitting room with feature fireplace, particularly comfortable lounge with Inglenook fireplace, charming dining room, well equipped farmhouse breakfast kitchen with range of pine units, utility room, cloakroom, six bedrooms, one having ensuite shower room, and spacious bathroom.<br /><br />There is an extensive driveway and courtyard providing considerable parking and brick built three car garaging. There is a further range of outbuildings which may prove suitable for providing additional accommodation as granny suite or similar, subject to the usual planning consent.<br /><br /><B><U>Imposing Entrance Hall: </U></B><br /><B>5.16m (16ft 11in) x 3.81m (12ft 6in) </B><br />With hardwood front door, quarry tiled flooring, beams to ceiling, 2 radiators, further side door, oak stairs off to first floor with railed balustrade, feature archway and walk in store off, fitted electric light, access also to Cellarage <br /> 3m (9ft 10in) into alcove reducing to 2.5m (8ft 2in)  x  4m (13ft 1in)<br /><br /><B><U>Lounge: </U></B><br /><B>4.25m (13ft 11in) x 3.7m (12ft 2in) </B><br />With coved ceiling, two double radiators, sliding patio doors to garden, attractive fireplace with fitted gas fire, TV point, telephone point (subject to BT regulations) fitted wall lights<br /><br /><B><U>Kitchen: </U></B><br /><B>4m (13ft 1in) x 3m (9ft 10in) </B><br />A large family Kitchen with etc etc 4.65m (15ft 3in) extending to 5m (16ft 5in)  x 2.9m (9ft 6in)<br /><br /><B><U>Sitting Room: </U></B><br /><B>4.65m (15ft 3in) x 4.65m (15ft 3in) </B><br />Having window to front, Valor Sunfire gas fire set against pretty tiled surround with mirrored over-mantel, double radiator, exposed beam, three dual power points and two television aerial sockets<br /><br /><B><U>Landing: </U></B><br />Having dual windows, two radiators, two power points, telephone connection point, ceiling coving<br /><br /><B><U>Bedroom 1: </U></B><br /><B>3.05m (10ft 0in) x 3.66m (12ft 0in) </B><br />A through room with exposed beam, double and single radiators, corner tub/shower with electric shower unit, vanitory basin set in antique pine cupboard unit, two dual power points, television aerial socket<br /><br /><B><U>Bathroom: </U></B><br />Having corner bath with hot and cold mixer taps, built-in Mira shower unit, vanitory basin with hot and cold mixer taps and set in cupboard and drawer unit, low level w.c., part tiled walls, radiator, electric shaver point<br /><br /><B><U>Bedroom 2: </U></B><br /><B>4.11m (13ft 6in) x 3.66m (12ft 5in) </B><br />Once again a through room with exposed beams, double radiator, three dual power points<br /><br />Family Bathroom<br /><B><U>Bedroom 3: </U></B><br /><B>4.32m (14ft 2in) x 3.81m (12ft 6in) </B><br />With exposed beam, double radiator, two dual power points, two wall light points<br /><br /><B><U>Bedroom 4: </U></B><br /><B>3.63m (11ft 11in) x 3.25m (10ft 8in) </B><br />With exposed beam, double radiator, two dual power points, two wall light points<br /><br /><B><U>Separate toilet: </U></B><br />With wash basin low level w.c., radiator<br /><br /><B><U>Second Landing: </U></B><br />With radiator, dual power point, wall light point<br /><br /><B><U>Bedroom 5: </U></B><br /><B>4.88m (16ft 0in) x 4.72m (15ft 6in) </B><br />With exposed beam, double radiator, two dual power points, two wall light points<br /><br /><B><U>Bedroom 6: </U></B><br /><B>4m (13ft 1in) x 3.91m (12ft 10in) </B><br />With exposed beam, double radiator, two dual power points, two wall light points<br /><br /><B><U>Outside: </U></B><br />Long gravel laid driveway from Marlowe Close leading to extensive gravel laid courtyard providing considerable parking and direct car access to Triple garage 31\'0 x 20\'0\" of brick and tile construction and having three sets of double doors, windows, fluorescent lighting and three dual power points.<br /><br />Brick and tile outbuildings in need of renovation but affording excellent opportunity to provide additional accommodation - perhaps for granny suite or similar, subject to the usual planning consent.<br /><br />Garden ground surrounding the property including lawns, flower beds, various shrubberies and ornamental lighting<br /><br />',6,355000,'CSL123_100327_IMG_00.JPG',1,1),
 	(2,'CSL123_100262','83','Arran Close','Nuneaton','CV10 7JX','Located in cul-de-sac position within the favoured Glendale development approximately 1.5 miles from town centre, this is an attractive modern link detached residence built approximately 30 years ago. <br /><br />This appealing house really must be viewed internally to be properly appreciated and has full gas central heating installed together with majority windows double glazed. There is also the advantage of EMEB Burglar Alarm system.<br /><br />The generous versatile family accommodation includes canopy porch with attractive support columns, entrance hall, cloakroom, study/bedroom, delightful lounge with bay window and French door to garden, dining area and pleasing breakfast kitchen with modem range of pine units incorporating built-in oven and hob. There is also a utility room. To the first floor there are three bedrooms, the second bedroom specifically designed to easily allow for sub-division to create two rooms. There is also a spacious well-fitted bathroom including shower and bidet.<br /><br />Wide driveway provides parking and direct car access to garage with up and over doors to each end and there is an attractively laid rear garden. In more detail the accommodation comprises:-<br /><br /><B><U>Hall: </U></B><br /><B>5.33m (17ft 6in) x 2.44m (8ft 0in) </B><br />With glazed front door and screening to exterior, pine panelled ceiling, coat hooks<br /><br /><B><U>Lounge: </U></B><br /><B>4.5m (14ft 9in) x 4.5m (14ft 9in) </B><br />Having secondary glazed window to front, rustic brick feature walling, stairs off to first floor, warm air outlet, dual and two single power points, television aerial socket<br /><br /><B><U>Dining Area: </U></B><br /><B>3.58m (11ft 9in) x 2.74m (9ft 0in) </B><br />With double glazed sliding patio doors to garden, warm air outlet, two power points, built-in cupboard housing gas fired boiler providing central heating system only, sliding door to<br /><br /><B><U>Kitchen: </U></B><br /><B>3.35m (11ft 0in) x 1.83m (6ft 0in) </B><br />With upvc double glazed window, single base cupboard and drawer unit with worktop, stainless steel sink unit, triple wall cupboard, worktop/breakfast bar, glass fronted wall cabinet, fully tiled walls, electric cooker panel, gas connection point and three power points<br /><br /><B><U>Landing: </U></B><br /><B>4.2m (13ft 9in) x 2.01m (6ft 7in) </B><br />Having built-in airing cupboard housing Main gas water heater<br /><br /><B><U>Bedroom 1: </U></B><br /><B>3.96m (13ft 0in) x 2.67m (8ft 9in) </B><br />With secondary glazed window, built-in double wardrobe, warm air outlet, two power points, telephone connection point<br /><br /><B><U>Bedroom 2: </U></B><br /><B>3.2m (10ft 6in) x 2.67m (8ft 9in) </B><br />Having built-in wardrobe, warm air outlet and power point<br /><br /><B><U>Bathroom: </U></B><br /><B>2.44m (8ft 0in) x 2.44m (8ft 0in) </B><br />With fully tiled walls, warm air outlet, panelled bath, pedestal wash basin and low level w.c.<br /><br />The loft is insulated.<br /><br /><B><U>Outside: </U></B><br />Deep open plan lawned foregarden with rose borders, long tarmacadam driveway to attached Garage 16\'3\" x 8\'6\" with personal rear door, electric light and power point.  Fully enclosed rear garden, paved patio, lawn, flower borders, shrubberies, roses, greenhouse.<br /><br />',2,360000,'CSL123_100262_IMG_00.JPG',1,2),
@@ -99,15 +99,15 @@ DROP TABLE IF EXISTS `status`;
 
 CREATE TABLE `status` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `StatusName` varchar(255) DEFAULT NULL,
-  `StatusId` int(11) DEFAULT NULL,
+  `statusName` varchar(255) NOT NULL DEFAULT '',
+  `statusId` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 LOCK TABLES `status` WRITE;
 /*!40000 ALTER TABLE `status` DISABLE KEYS */;
 
-INSERT INTO `status` (`id`, `StatusName`, `StatusId`)
+INSERT INTO `status` (`id`, `statusName`, `statusId`)
 VALUES
 	(1,'For Sale',1),
 	(2,'Sold',2),
@@ -125,15 +125,15 @@ DROP TABLE IF EXISTS `types`;
 
 CREATE TABLE `types` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `TypeName` varchar(255) DEFAULT NULL,
-  `TypeId` int(11) DEFAULT NULL,
+  `typeName` varchar(255) NOT NULL DEFAULT '',
+  `typeId` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 LOCK TABLES `types` WRITE;
 /*!40000 ALTER TABLE `types` DISABLE KEYS */;
 
-INSERT INTO `types` (`id`, `TypeName`, `TypeId`)
+INSERT INTO `types` (`id`, `typeName`, `typeId`)
 VALUES
 	(1,'Sale',1),
 	(2,'Let',2);
