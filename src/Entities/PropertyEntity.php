@@ -5,31 +5,31 @@ namespace ArmadilloEstates\Entities;
 
 class PropertyEntity
 {
-    private $Address1;
-    private $Town;
-    private $Type;
-    private $Status;
+    private $address1;
+    private $town;
+    private $type;
+    private $status;
     private $id;
-    private $Image;
+    private $image;
     
     public function getAddress1(): string
     {
-        return $this->Address1;
+        return $this->address1;
     }
     
     public function getTown(): string
     {
-        return $this->Town;
+        return $this->town;
     }
 
     public function getType(): string
     {
-        return $this->Type;
+        return $this->type;
     }
     
     public function getStatus(): string
     {
-        return $this->Status;
+        return $this->status;
     }
 
     public function getId(): int 
@@ -39,6 +39,6 @@ class PropertyEntity
     
     public function getImage(): string
     {
-        return $this->Image;
+        return $this->image;
     }
 }
