@@ -4,6 +4,20 @@ $propertyUrl = "https://dev.maydenacademy.co.uk/resources/property-feed/properti
 $statusUrl = "https://dev.maydenacademy.co.uk/resources/property-feed/statuses.json";
 $typeUrl = "https://dev.maydenacademy.co.uk/resources/property-feed/types.json";
 
+$database = getArmadilloEstates();
+
+//foreach ($propertyResult as $property) {
+//    insertIntoPropertiesTable($database, $property);
+//}
+
+//foreach ($statusResult as $status) {
+//    insertIntoStatusTable($database, $status);
+//}
+
+//foreach ($typeResult as $type) {
+//    insertIntoTypesTable($database, $type);
+//}
+
 function properties($url)
 {
     $ch = curl_init();
@@ -18,14 +32,14 @@ function properties($url)
 
     return $result;
 }
-$propertyResult = properties($propertyUrl);
-$statusResult = properties($statusUrl);
-$typeResult = properties($typeUrl);
 
-function getArmadillosEstates(): PDO
+$propertyArray = properties($propertyUrl);
+$statusArray = properties($statusUrl);
+$typeArray = properties($typeUrl);
+
+function getArmadilloEstates(): PDO
 {
     $db = new PDO('mysql:host=DB;dbname=armadilloEstates', 'root', 'password');
-    //$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     return $db;
 }
 
@@ -53,13 +67,36 @@ function insertIntoPropertiesTable(PDO $db, array $propertyData): bool
                                                                 :IMAGE, 
                                                                 :TYPE, 
                                                                 :STATUS);");
-    $insertDB = $query->execute($propertyData);
-    return $insertDB;
+    return $query->execute($propertyData);
+}
+
+function insertIntoStatusTable(PDO $db, array $statusData): bool
+{
+    $query = $db->prepare("INSERT INTO `status` (`StatusId`,
+                                                            `StatusName`) 
+                                                        VALUES (:ID, 
+                                                                :STATUS_NAME);");
+    return $query->execute($statusData);
+}
+
+function insertIntoTypesTable(PDO $db, array $typeData): bool
+{
+    $query = $db->prepare("INSERT INTO `types` (`TypeId`,
+                                                            `TypeName`) 
+                                                        VALUES (:ID, 
+                                                                :TYPE_NAME);");
+    return $query->execute($typeData);
 }
 
 
-$database = getArmadillosEstates();
 
-//foreach ($propertyResult as $property) {
-//    insertIntoPropertiesTable($database, $property);
-//}
+function validateUsrInput(array $newBread) :bool
+{
+    return (
+        !empty($newBread['imgurl']) &&
+        !empty($newBread['name']) &&
+        !empty($newBread['type']) &&
+        !empty($newBread['rating']) &&
+        !empty($newBread['desc'])
+    );
+}
