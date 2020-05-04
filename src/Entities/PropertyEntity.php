@@ -7,7 +7,7 @@ class PropertyEntity
 {
     private $address1;
     private $town;
-    private $type;
+    private $propertyType;
     private $status;
     private $id;
     private $image;
@@ -22,9 +22,9 @@ class PropertyEntity
         return $this->town;
     }
 
-    public function getType(): string
+    public function getPropertyType(): string
     {
-        return $this->type;
+        return $this->propertyType;
     }
     
     public function getStatus(): string
