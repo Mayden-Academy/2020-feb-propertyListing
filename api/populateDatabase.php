@@ -21,22 +21,45 @@ function properties($url)
 $propertyResult = properties($propertyUrl);
 $statusResult = properties($statusUrl);
 $typeResult = properties($typeUrl);
-var_dump($propertyResult);
-var_dump($typeResult);
-var_dump($statusResult);
-
-
 
 function getArmadillosEstates(): PDO
 {
-    $db = new PDO('mysql:host=DB;dbname=armadillosEstate', 'root', 'password');
+    $db = new PDO('mysql:host=DB;dbname=armadilloEstates', 'root', 'password');
     //$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     return $db;
 }
 
-function insertIntoPropertiesTable(PDO $db): bool
+function insertIntoPropertiesTable(PDO $db, array $propertyData): bool
 {
-    $query = $db->prepare("INSERT INTO `properties` (`AgentRef`, `Address1`, `Address2`, `Town`, `Postcode`, `Desc`, `Beds`, `Price`, `Image`, `Type`, `Status`) VALUES (:name, :type, :rating, :desc, :imgurl);");
-    $insertDB = $query->execute($newBread);
+    $query = $db->prepare("INSERT INTO `properties` (`AgentRef`,
+                                                                 `Address1`,
+                                                                 `Address2`,
+                                                                 `Town`,
+                                                                 `Postcode`, 
+                                                                 `Description`, 
+                                                                 `Beds`, 
+                                                                 `Price`, 
+                                                                 `Image`, 
+                                                                 `PropertyType`, 
+                                                                 `Status`) 
+                                                        VALUES (:AGENT_REF, 
+                                                                :ADDRESS_1, 
+                                                                :ADDRESS_2, 
+                                                                :TOWN, 
+                                                                :POSTCODE, 
+                                                                :DESCRIPTION, 
+                                                                :BEDROOMS, 
+                                                                :PRICE, 
+                                                                :IMAGE, 
+                                                                :TYPE, 
+                                                                :STATUS);");
+    $insertDB = $query->execute($propertyData);
     return $insertDB;
 }
+
+
+$database = getArmadillosEstates();
+
+//foreach ($propertyResult as $property) {
+//    insertIntoPropertiesTable($database, $property);
+//}
