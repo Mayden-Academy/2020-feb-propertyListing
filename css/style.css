@@ -1,5 +1,10 @@
 
 .cardImg {
     height: 261px;
-    object-fit: cover;
+    object-fit: scale-down;
+}
+
+.logoimg, .stabilizerDiv {
+    height: 50px;
+    width: 50px;
 }

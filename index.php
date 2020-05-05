@@ -17,11 +17,10 @@
 <nav class="navbar navbar-light bg-light mb-4">
     <div class="container">
         <a class="navbar-brand" href="#">
-            <img src="./img/logo.png" height="40"
-                 class="d-inline-block align-top" alt="">
+            <img src="./img/logo.png" class="d-inline-block align-top logoimg" alt="">
         </a>
         <h2>Armadillo Estates</h2>
-        <div></div><!-- this empty div is required for the positioning of the h2 above-->
+        <div class="stabilizerDiv"></div><!-- this empty div is required for the positioning of the h2 above-->
     </div>
 </nav>
 <div class="container">
