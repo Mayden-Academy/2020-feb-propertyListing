@@ -6,6 +6,7 @@ namespace ArmadilloEstates\Entities;
 class PropertyEntity
 {
     private $address1;
+    private $address2;
     private $town;
     private $typeName;
     private $statusName;
@@ -15,6 +16,11 @@ class PropertyEntity
     public function getAddress1(): string
     {
         return $this->address1;
+    }
+
+    public function getAddress2(): string
+    {
+        return $this->address2;
     }
     
     public function getTown(): string

@@ -1,9 +1,17 @@
+<?php
+    require ("vendor/autoload.php");
+    $db = \ArmadilloEstates\Database\Database::connect();
+    $hydrator = new \ArmadilloEstates\Hydrators\PropertyHydrator($db);
+    $allProperties = $hydrator->getAllBasicProperties();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Armadillo Estates</title>
     <link rel="stylesheet" href="./css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
 </head>
 <body>
 <nav class="navbar navbar-light bg-light mb-4">
@@ -18,61 +26,9 @@
 </nav>
 <div class="container">
     <div class="row">
-        <div class="col-4 text-center mb-4">
-            <div class="card">
-                <h5 class="card-title pt-3">Hill Farm, Plough Hill Road</h5>
-                <img class="card-img-top" src="https://placehold.it/1920x1080" alt="Card image cap">
-                <div class="card-body">
-                    <p class="card-text">For Sale</p>
-                    <p class="card-text">Available!</p>
-                    <a href="#" class="btn btn-primary">View more...</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-4 text-center mb-4">
-            <div class="card">
-                <h5 class="card-title pt-3">Hill Farm, Plough Hill Road</h5>
-                <img class="card-img-top" src="https://placehold.it/1920x1080" alt="Card image cap">
-                <div class="card-body">
-                    <p class="card-text">For Sale</p>
-                    <p class="card-text">Available!</p>
-                    <a href="#" class="btn btn-primary">View more...</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-4 text-center mb-4">
-            <div class="card">
-                <h5 class="card-title pt-3">Hill Farm, Plough Hill Road</h5>
-                <img class="card-img-top" src="https://placehold.it/1920x1080" alt="Card image cap">
-                <div class="card-body">
-                    <p class="card-text">For Sale</p>
-                    <p class="card-text">Available!</p>
-                    <a href="#" class="btn btn-primary">View more...</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-4 text-center mb-4">
-            <div class="card">
-                <h5 class="card-title pt-3">Hill Farm, Plough Hill Road</h5>
-                <img class="card-img-top" src="https://placehold.it/1920x1080" alt="Card image cap">
-                <div class="card-body">
-                    <p class="card-text">For Sale</p>
-                    <p class="card-text">Available!</p>
-                    <a href="#" class="btn btn-primary">View more...</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-4 text-center mb-4">
-            <div class="card">
-                <h5 class="card-title pt-3">Hill Farm, Plough Hill Road</h5>
-                <img class="card-img-top" src="https://placehold.it/1920x1080" alt="Card image cap">
-                <div class="card-body">
-                    <p class="card-text">For Sale</p>
-                    <p class="card-text">Available!</p>
-                    <a href="#" class="btn btn-primary">View more...</a>
-                </div>
-            </div>
-        </div>
+        <?php
+        echo \ArmadilloEstates\ViewHelpers\PropertyViewHelper::displayAll($allProperties);
+        ?>
     </div>
 </div>
 </body>
