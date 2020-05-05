@@ -13,7 +13,7 @@
                  class="d-inline-block align-top" alt="">
         </a>
         <h2>Armadillo Estates</h2>
-        <h2></h2>
+        <div></div><!-- this empty div is required for the positioning of the h2 above-->
     </div>
 </nav>
 <div class="container">
