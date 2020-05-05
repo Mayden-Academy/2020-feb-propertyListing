@@ -20,7 +20,7 @@ class PropertyHydrator
     public function getAllBasicProperties(): IPropertyCollection
     {
         $query = $this->database->query("
-SELECT `address1`, `town`, `typeName`, `statusName`, `properties`.`id`,  `image` FROM `properties` 
+SELECT `address1`, `address2`, `town`, `typeName`, `statusName`, `properties`.`id`,  `image` FROM `properties` 
 JOIN `types` ON `properties`.`propertyType` = `types`.`typeId` 
 JOIN `status` ON `properties`.`status` = `status`.`statusId`;
 ");

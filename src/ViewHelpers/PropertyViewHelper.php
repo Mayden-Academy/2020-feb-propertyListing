@@ -13,8 +13,8 @@ abstract class PropertyViewHelper
         $stringToDisplay = "";
         foreach ($propertyCollection->getAllProperties() as $property) {
             $stringToDisplay .= '<div class="col-4 text-center mb-4"><div class="card">';
-            $stringToDisplay .= '<h5 class="card-title pt-3">' . $property->getAddress1() . ',' . $property->getTown() . '</h5>';
-            $stringToDisplay .= '<img class="card-img-top" src="https://placehold.it/1920x1080" alt="Card image cap">';
+            $stringToDisplay .= '<h5 class="card-title pt-3">' . $property->getAddress1() . ' ' . $property->getAddress2() . ', ' . $property->getTown() . '</h5>';
+            $stringToDisplay .= '<img class="card-img-top" src="https://dev.maydenacademy.co.uk/resources/property-feed/images/' . $property->getImage() . '" alt="Card image cap">';
             $stringToDisplay .= '<div class="card-body">';
             $stringToDisplay .= '<p class="card-text">' . $property->getTypeName() . '</p>';
             $stringToDisplay .= '<p class="card-text">' . $property->getStatusName() . '</p>';
