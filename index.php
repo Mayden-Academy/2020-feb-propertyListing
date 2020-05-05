@@ -9,7 +9,7 @@
 <nav class="navbar navbar-light bg-light mb-4">
     <div class="container">
         <a class="navbar-brand" href="#">
-            <img src="https://svgsilh.com/svg_v2/309113.svg" width="30" height="30"
+            <img src="./img/logo.png" height="40"
                  class="d-inline-block align-top" alt="">
         </a>
         <h2>Armadillo Estates</h2>
