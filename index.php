@@ -11,6 +11,7 @@
     <meta charset="UTF-8">
     <title>Armadillo Estates</title>
     <link rel="stylesheet" href="./css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
 </head>
 <body>
 <nav class="navbar navbar-light bg-light mb-4">
