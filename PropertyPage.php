@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <?php
-//    require ""
+    require ""
     ?>
     <meta charset="UTF-8">
     <title>Armadillo Estates</title>
