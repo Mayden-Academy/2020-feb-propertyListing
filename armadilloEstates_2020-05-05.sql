@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.29)
 # Database: armadilloEstates
-# Generation Time: 2020-05-04 15:04:42 +0000
+# Generation Time: 2020-05-05 14:10:25 +0000
 # ************************************************************
 
 
@@ -109,9 +109,9 @@ LOCK TABLES `status` WRITE;
 
 INSERT INTO `status` (`id`, `statusName`, `statusId`)
 VALUES
-	(1,'For Sale',1),
+	(1,'Available',1),
 	(2,'Sold',2),
-	(3,'To Let',3),
+	(3,'Available',3),
 	(4,'Let Agreed',4);
 
 /*!40000 ALTER TABLE `status` ENABLE KEYS */;
