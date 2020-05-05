@@ -20,3 +20,8 @@ body {
 .description {
     font-size: 1rem;
 }
+
+.cardImg {
+    height: 261px;
+    object-fit: cover;
+}
