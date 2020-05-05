@@ -6,7 +6,7 @@
 ?>
 
 <!DOCTYPE html>
-<head lang="en">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Armadillo Estates</title>
