@@ -5,8 +5,9 @@ namespace ArmadilloEstates\Collections;
 
 
 use ArmadilloEstates\Entities\PropertyEntity;
+use ArmadilloEstates\Interfaces\IPropertyCollection;
 
-class PropertyCollection
+class PropertyCollection implements IPropertyCollection
 {
     private $allProperties;
 
