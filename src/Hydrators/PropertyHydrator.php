@@ -19,7 +19,11 @@ class PropertyHydrator
 
     public function getAllBasicProperties(): IPropertyCollection
     {
-        $query = $this->database->query("SELECT `Address1`, `Town`, `propertyType`, `Status`, `id`,  `Image` FROM `properties`;");
+        $query = $this->database->query("
+SELECT `address1`, `town`, `typeName`, `statusName`, `properties`.`id`,  `image` FROM `properties` 
+JOIN `types` ON `properties`.`propertyType` = `types`.`typeId` 
+JOIN `status` ON `properties`.`status` = `status`.`statusId`;
+");
         $result = $query->setFetchMode(\PDO::FETCH_CLASS, PropertyEntity::class);
 
         return new PropertyCollection($query->fetchAll());
