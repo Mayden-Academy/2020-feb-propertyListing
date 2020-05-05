@@ -11,16 +11,15 @@
 </head>
 <body>
 <div class="container">
-    <nav class="navbar navbar-light bg-light">
-        <div class="col-4">
-            <a class="navbar-brand" href="#">
-                <img src="https://i.stack.imgur.com/yZlqh.png" width="75" height="45"
-                     class="d-inline-block align-top" alt="">
+    <nav class=“navbar navbar-light bg-light mb-4”>
+        <div class=“container”>
+            <a class=“navbar-brand” href=“#”>
+                <img src=“./img/logo.png” height=“40"
+                     class=“d-inline-block align-top” alt=“”>
             </a>
+            <h2>Armadillo Estates</h2>
+            <div></div><!-- this empty div is required for the positioning of the h2 above-->
         </div>
-        <h1 class="col-8 d-flex">
-            Armadillo Estates
-        </h1>
     </nav>
 </div>
 <div class="container mb-4">
