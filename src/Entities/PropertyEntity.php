@@ -7,8 +7,8 @@ class PropertyEntity
 {
     private $address1;
     private $town;
-    private $type;
-    private $status;
+    private $typeName;
+    private $statusName;
     private $id;
     private $image;
     
@@ -22,14 +22,14 @@ class PropertyEntity
         return $this->town;
     }
 
-    public function getType(): string
+    public function getTypeName(): string
     {
-        return $this->type;
+        return $this->typeName;
     }
     
-    public function getStatus(): string
+    public function getStatusName(): string
     {
-        return $this->status;
+        return $this->statusName;
     }
 
     public function getId(): int 
