@@ -3,8 +3,15 @@
 namespace ArmadilloEstates\Entities;
 
 
-class PropertyEntity
+use ArmadilloEstates\Interfaces\IPropertyEntity;
+
+class PropertyEntity implements IPropertyEntity
 {
+    private $description;
+    private $agentRef;
+    private $postcode;
+    private $beds;
+    private $price;
     private $address1;
     private $address2;
     private $town;
@@ -12,7 +19,32 @@ class PropertyEntity
     private $statusName;
     private $id;
     private $image;
-    
+
+    public function getDescription(): string
+    {
+        return $this->description;
+    }
+
+    public function getAgentRef(): string
+    {
+        return $this->agentRef;
+    }
+
+    public function getPostcode(): string
+    {
+        return $this->postcode;
+    }
+
+    public function getBeds(): int
+    {
+        return $this->beds;
+    }
+
+    public function getPrice(): int
+    {
+        return $this->price;
+    }
+
     public function getAddress1(): string
     {
         return $this->address1;
@@ -22,7 +54,7 @@ class PropertyEntity
     {
         return $this->address2;
     }
-    
+
     public function getTown(): string
     {
         return $this->town;
@@ -32,17 +64,17 @@ class PropertyEntity
     {
         return $this->typeName;
     }
-    
+
     public function getStatusName(): string
     {
         return $this->statusName;
     }
 
-    public function getId(): int 
+    public function getId(): int
     {
         return $this->id;
     }
-    
+
     public function getImage(): string
     {
         return $this->image;
