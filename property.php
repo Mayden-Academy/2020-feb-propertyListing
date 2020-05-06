@@ -1,8 +1,21 @@
 <?php
-    require ("vendor/autoload.php");
+require ("vendor/autoload.php");
+
+if(isset($_GET["id"])) {
+    $id = $_GET["id"];
+} else {
+    header("Location: index.php");
+    die();
+}
+
+try {
     $db = \ArmadilloEstates\Database\Database::connect();
     $hydrator = new \ArmadilloEstates\Hydrators\PropertyHydrator($db);
-    $allProperties = $hydrator->getAllBasicProperties();
+    $property = $hydrator->getCompleteListingById($id);
+    $displayCards = \ArmadilloEstates\ViewHelpers\PropertyViewHelper::displayOne($property);
+} catch (Throwable $error) {
+    $displayCards = "<h3>Invalid Link! Please head back to the main page</h3>";
+}
 ?>
 
 <!DOCTYPE html>
@@ -23,11 +36,14 @@
             <div class="stabilizerDiv"></div><!-- this empty div is required for the positioning of the h2 above-->
         </div>
     </nav>
-    <div class="container">
+    <div class="container mb-4">
         <div class="row">
             <?php
-            echo \ArmadilloEstates\ViewHelpers\PropertyViewHelper::displayAll($allProperties);
+            echo $displayCards;
             ?>
+            <div class="col-12 d-flex justify-content-center">
+                <a class="btn btn-primary" href="index.php">Back</a>
+            </div>
         </div>
     </div>
 </body>

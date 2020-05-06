@@ -11,4 +11,12 @@ class PropertyEntityTest extends PHPUnit\Framework\TestCase
         $entity = new PropertyEntity();
         $this->assertInstanceOf(PropertyEntity::class, $entity);
     }
+
+    public function testSuccessGetImagePlaceholder()
+    {
+        $entity = new PropertyEntity();
+
+        $image = $entity->getImage();
+        $this->assertSame("https://i.stack.imgur.com/yZlqh.png", $image);
+    }
 }
