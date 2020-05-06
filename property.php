@@ -18,7 +18,7 @@ $property = $hydrator->getCompleteListingById($id);
     <nav class="navbar navbar-light bg-light mb-4">
         <div class="container">
             <a class="navbar-brand" href="index.php">
-                <img src="./img/logo.png" class="d-inline-block align-top logoimg" alt="">
+                <img src="./img/logo.png" class="d-inline-block align-top logoimg" alt="Logo">
             </a>
             <h2>Armadillo Estates</h2>
             <div class="stabilizerDiv"></div><!-- this empty div is required for the positioning of the h2 above-->

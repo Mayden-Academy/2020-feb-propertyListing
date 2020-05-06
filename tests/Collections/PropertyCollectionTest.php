@@ -6,7 +6,6 @@ use ArmadilloEstates\Collections\PropertyCollection;
 use ArmadilloEstates\Interfaces\IPropertyCollection;
 use ArmadilloEstates\Interfaces\IPropertyEntity;
 
-
 class PropertyCollectionTest extends PHPUnit\Framework\TestCase
 {
     public function testSuccessPropertyCollection()
