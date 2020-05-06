@@ -75,6 +75,9 @@ class PropertyEntity implements IPropertyEntity
         return $this->id;
     }
 
+    /**
+     * @return string Returns Image Url unless Image missing then returns Default Image Url
+     */
     public function getImage(): string
     {
         if(empty($this->image)) {

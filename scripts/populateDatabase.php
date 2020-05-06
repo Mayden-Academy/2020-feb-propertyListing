@@ -4,28 +4,34 @@ $propertyUrl = "https://dev.maydenacademy.co.uk/resources/property-feed/properti
 $statusUrl = "https://dev.maydenacademy.co.uk/resources/property-feed/statuses.json";
 $typeUrl = "https://dev.maydenacademy.co.uk/resources/property-feed/types.json";
 
-$database = getArmadilloEstates();
+$database = connectToDatabase();
 
-$propertyArray = getApiData($propertyUrl);
-$statusArray = getApiData($statusUrl);
-$typeArray = getApiData($typeUrl);
+$allProperties = getApiData($propertyUrl);
+$allStatuses = getApiData($statusUrl);
+$allTypes = getApiData($typeUrl);
 
-$database->query("TRUNCATE TABLE `properties`");
-foreach ($propertyArray as $property) {
-    insertIntoPropertiesTable($database, $property);
+$databaseData = [['data'=>$allProperties, 'tableName'=>'properties'],
+    ['data'=>$allStatuses, 'tableName'=>'status'],
+    ['data'=>$allTypes, 'tableName'=>'types']];
+
+foreach ($databaseData as $tableData) {
+    $query = $database->query("TRUNCATE TABLE `" . $tableData['tableName'] . "`");
+    foreach ($tableData['data'] as $data) {
+        switch ($tableData['tableName']) {
+            case 'properties':
+                insertIntoPropertiesTable($database, $data);
+                break;
+            case 'status':
+                insertIntoStatusTable($database, $data);
+                break;
+            case 'types':
+                insertIntoTypesTable($database, $data);
+                break;
+        }
+    }
 }
 
-$database->query("TRUNCATE TABLE `status`");
-foreach ($statusArray as $status) {
-    insertIntoStatusTable($database, $status);
-}
-
-$database->query("TRUNCATE TABLE `types`");
-foreach ($typeArray as $type) {
-    insertIntoTypesTable($database, $type);
-}
-
-function getApiData($url)
+function getApiData(string $url): array
 {
     $ch = curl_init();
 
@@ -40,7 +46,7 @@ function getApiData($url)
     return $result;
 }
 
-function getArmadilloEstates(): PDO
+function connectToDatabase(): PDO
 {
     $db = new PDO('mysql:host=DB;dbname=armadilloEstates', 'root', 'password');
     return $db;
@@ -89,4 +95,5 @@ function insertIntoTypesTable(PDO $db, array $typeData): bool
     $query = $db->prepare("INSERT INTO `types` (`typeId`, `typeName`) VALUES (:ID, :TYPE_NAME);");
     return $query->execute($typeData);
 }
+
 
