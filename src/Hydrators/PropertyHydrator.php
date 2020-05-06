@@ -17,6 +17,10 @@ class PropertyHydrator
         $this->database = $database;
     }
 
+    /**
+     * @return IPropertyCollection Returns an instance of Property collection containing all required information for
+     * the main page
+     */
     public function getAllBasicProperties(): IPropertyCollection
     {
         $query = $this->database->query("
