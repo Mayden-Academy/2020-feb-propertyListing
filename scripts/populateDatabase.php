@@ -10,6 +10,18 @@ $allProperties = getApiData($propertyUrl);
 $allStatuses = getApiData($statusUrl);
 $allTypes = getApiData($typeUrl);
 
+foreach ($allProperties as $key=>$property) {
+    if ($property['STATUS'] === 3) {
+        $allProperties[$key]['STATUS'] = 1;
+    } else if ($property['STATUS'] === 4) {
+        $allProperties[$key]['STATUS'] = 3;
+    }
+}
+
+$allStatuses[0]['STATUS_NAME'] = 'Available';
+$allStatuses[2]['STATUS_NAME'] = 'Let Agreed';
+array_pop($allStatuses); // removes unnecessary linking table value.
+
 $databaseData = [['data'=>$allProperties, 'tableName'=>'properties'],
     ['data'=>$allStatuses, 'tableName'=>'status'],
     ['data'=>$allTypes, 'tableName'=>'types']];
