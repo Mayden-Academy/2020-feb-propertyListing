@@ -4,8 +4,8 @@
 namespace ArmadilloEstates\Collections;
 
 
-use ArmadilloEstates\Entities\PropertyEntity;
 use ArmadilloEstates\Interfaces\IPropertyCollection;
+use ArmadilloEstates\Interfaces\IPropertyEntity;
 
 class PropertyCollection implements IPropertyCollection
 {
@@ -20,7 +20,7 @@ class PropertyCollection implements IPropertyCollection
     private function propertyCheck($properties)
     {
         foreach ($properties as $property) {
-            if (!($property instanceof PropertyEntity)) {
+            if (!($property instanceof IPropertyEntity)) {
                 throw new \Exception('Array must only contain instances of PropertyEntity');
             }
         }

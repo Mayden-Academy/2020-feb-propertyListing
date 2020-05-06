@@ -3,7 +3,9 @@
 namespace ArmadilloEstates\Entities;
 
 
-class PropertyEntity
+use ArmadilloEstates\Interfaces\IPropertyEntity;
+
+class PropertyEntity implements IPropertyEntity
 {
     private $address1;
     private $address2;
