@@ -18,7 +18,6 @@ abstract class PropertyViewHelper
             $stringToDisplay .= '<div class="card-body">';
             $stringToDisplay .= '<p class="card-text">' . $property->getTypeName() . '</p>';
             $stringToDisplay .= '<p class="card-text">' . $property->getStatusName() . '</p>';
-            $stringToDisplay .= '<a href="#" class="btn btn-primary">View More...</a>';
             $stringToDisplay .= '</div></div></div>';
         }
 

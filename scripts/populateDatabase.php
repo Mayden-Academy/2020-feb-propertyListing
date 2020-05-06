@@ -15,22 +15,19 @@ $databaseData = [['data'=>$allProperties, 'tableName'=>'properties'],
     ['data'=>$allTypes, 'tableName'=>'types']];
 
 foreach ($databaseData as $tableData) {
-    $query = $database->query("TRUNCATE TABLE `$tableData['tableName']`");
-    switch ($tableData['tableName']) {
-        case 'properties':
-            foreach ($tableData['data'] as $data) {
+    $query = $database->query("TRUNCATE TABLE `" . $tableData['tableName'] . "`");
+    foreach ($tableData['data'] as $data) {
+        switch ($tableData['tableName']) {
+            case 'properties':
                 insertIntoPropertiesTable($database, $data);
-            }
-            break;
-        case 'status':
-            foreach ($allStatuses as $status) {
-                insertIntoStatusTable($database, $status);
-            }
-            break;
-        case 'types':
-            foreach ($allTypes as $type) {
-                insertIntoTypesTable($database, $type);
-            }
+                break;
+            case 'status':
+                insertIntoStatusTable($database, $data);
+                break;
+            case 'types':
+                insertIntoTypesTable($database, $data);
+                break;
+        }
     }
 }
 

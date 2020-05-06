@@ -11,7 +11,7 @@ class PropertyCollectionTest extends PHPUnit\Framework\TestCase
         $entity = $this->createMock(\ArmadilloEstates\Entities\PropertyEntity::class);
         $array = [$entity, $entity, $entity];
         $collection = new PropertyCollection($array);
-        $this->addToAssertionCount(1);
+        $this->assertInstanceOf(PropertyCollection::class, $collection);
     }
 
     public function testFailurePropertyCollection()

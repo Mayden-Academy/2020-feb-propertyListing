@@ -42,7 +42,7 @@ class PropertyViewHelperTest extends PHPUnit\Framework\TestCase
         $expected .= '<h5 class="card-title pt-3">Address1 Address2<br>Town</h5>';
         $expected .= '<img class="card-img-top cardImg" src=Image alt="Card image cap"><div class="card-body">';
         $expected .= '<p class="card-text">Sale</p><p class="card-text">Sold</p>';
-        $expected .= '<a href="#" class="btn btn-primary">View More...</a></div></div></div>';
+        $expected .= '</div></div></div>';
 
         $this->assertEquals($expected, PropertyViewHelper::displayAll($collection));
     }

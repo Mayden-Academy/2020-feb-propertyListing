@@ -10,6 +10,6 @@ class PropertyHydratorTest extends PHPUnit\Framework\TestCase
     {
         $pdoMock = $this->createMock(PDO::class);
         $hydrator = new PropertyHydrator($pdoMock);
-        $this->assertObjectHasAttribute('database', $hydrator);
+        $this->assertInstanceOf(PropertyHydrator::class, $hydrator);
     }
 }
