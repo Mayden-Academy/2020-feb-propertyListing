@@ -1,9 +1,21 @@
 <?php
 require ("vendor/autoload.php");
-$id = $_GET["id"];
-$db = \ArmadilloEstates\Database\Database::connect();
-$hydrator = new \ArmadilloEstates\Hydrators\PropertyHydrator($db);
-$property = $hydrator->getCompleteListingById($id);
+
+if(isset($_GET["id"])) {
+    $id = $_GET["id"];
+} else {
+    header("Location: index.php");
+    die();
+}
+
+try {
+    $db = \ArmadilloEstates\Database\Database::connect();
+    $hydrator = new \ArmadilloEstates\Hydrators\PropertyHydrator($db);
+    $property = $hydrator->getCompleteListingById($id);
+    $displayCards = \ArmadilloEstates\ViewHelpers\PropertyViewHelper::displayOne($property);
+} catch (Throwable $error) {
+    $displayCards = "<h3>Invalid Link! Please head back to the main page</h3>";
+}
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +39,7 @@ $property = $hydrator->getCompleteListingById($id);
     <div class="container mb-4">
         <div class="row">
             <?php
-            echo \ArmadilloEstates\ViewHelpers\PropertyViewHelper::displayOne($property);
+            echo $displayCards;
             ?>
             <div class="col-12 d-flex justify-content-center">
                 <a class="btn btn-primary" href="index.php">Back</a>

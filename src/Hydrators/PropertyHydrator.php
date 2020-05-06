@@ -48,7 +48,7 @@ JOIN `types` ON `properties`.`propertyType` = `types`.`typeId`
 JOIN `status` ON `properties`.`status` = `status`.`statusId` WHERE `properties`.`id`=?;
         ");
         $query->execute([$id]);
-        $result = $query->setFetchMode(\PDO::FETCH_CLASS, PropertyEntity::class);
+        $query->setFetchMode(\PDO::FETCH_CLASS, PropertyEntity::class);
 
         return $query->fetch();
     }
