@@ -29,7 +29,7 @@ abstract class PropertyViewHelper
     public static function displayOne(IPropertyEntity $property): string {
         $stringToDisplay = '<div class="col-12 mb-4">';
         $stringToDisplay .= '<div class="card">';
-        $stringToDisplay .= '<img class="card-img-top" src="https://dev.maydenacademy.co.uk/resources/property-feed/images/' . $property->getImage() . '" alt="Card image cap">';
+        $stringToDisplay .= '<img class="card-img-top" src=' . $property->getImage() . ' alt="Card image cap">';
         $stringToDisplay .= '<div class="detailsContainer d-flex">';
         $stringToDisplay .= '<div class="col-4 card-body">';
         $stringToDisplay .= '<h5>Address</h5>';

@@ -21,4 +21,14 @@ class PropertyCollectionTest extends PHPUnit\Framework\TestCase
         $this->expectExceptionMessage('Array must only contain instances of PropertyEntity');
         $collection = new PropertyCollection($array);
     }
+
+    public function testSuccessGetAllProperties()
+    {
+        $entity = $this->createMock(\ArmadilloEstates\Entities\PropertyEntity::class);
+        $array = [$entity, $entity, $entity];
+        $collection = new PropertyCollection($array);
+
+        $testCollection = $collection->getAllProperties();
+        $this->assertEquals($testCollection, $array);
+    }
 }

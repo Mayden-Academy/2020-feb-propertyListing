@@ -16,7 +16,7 @@
 <body>
 <nav class="navbar navbar-light bg-light mb-4">
     <div class="container">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="index.php">
             <img src="./img/logo.png" class="d-inline-block align-top logoimg" alt="">
         </a>
         <h2>Armadillo Estates</h2>
