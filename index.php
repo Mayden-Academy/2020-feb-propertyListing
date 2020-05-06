@@ -14,21 +14,21 @@
     <link rel="stylesheet" href="./css/style.css" type="text/css">
 </head>
 <body>
-<nav class="navbar navbar-light bg-light mb-4">
+    <nav class="navbar navbar-light bg-light mb-4">
+        <div class="container">
+            <a class="navbar-brand" href="index.php">
+                <img src="./img/logo.png" class="d-inline-block align-top logoimg" alt="">
+            </a>
+            <h2>Armadillo Estates</h2>
+            <div class="stabilizerDiv"></div><!-- this empty div is required for the positioning of the h2 above-->
+        </div>
+    </nav>
     <div class="container">
-        <a class="navbar-brand" href="index.php">
-            <img src="./img/logo.png" class="d-inline-block align-top logoimg" alt="">
-        </a>
-        <h2>Armadillo Estates</h2>
-        <div class="stabilizerDiv"></div><!-- this empty div is required for the positioning of the h2 above-->
+        <div class="row">
+            <?php
+            echo \ArmadilloEstates\ViewHelpers\PropertyViewHelper::displayAll($allProperties);
+            ?>
+        </div>
     </div>
-</nav>
-<div class="container">
-    <div class="row">
-        <?php
-        echo \ArmadilloEstates\ViewHelpers\PropertyViewHelper::displayAll($allProperties);
-        ?>
-    </div>
-</div>
 </body>
 </html>
