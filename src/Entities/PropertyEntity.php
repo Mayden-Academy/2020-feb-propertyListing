@@ -77,6 +77,10 @@ class PropertyEntity implements IPropertyEntity
 
     public function getImage(): string
     {
-        return $this->image;
+        if(empty($this->image)) {
+            return "https://i.stack.imgur.com/yZlqh.png";
+        } else {
+            return "https://dev.maydenacademy.co.uk/resources/property-feed/images/" . $this->image;
+        }
     }
 }
