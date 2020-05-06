@@ -28,7 +28,7 @@ class PropertyCollectionTest extends PHPUnit\Framework\TestCase
         $array = [$entity, $entity, $entity];
         $collection = new PropertyCollection($array);
 
-        $testCollection = $collection->getAllProperties();
-        $this->assertEquals($testCollection, $array);
+        $expected = $collection->getAllProperties();
+        $this->assertEquals($expected, $array);
     }
 }
