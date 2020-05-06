@@ -122,8 +122,8 @@ class PropertyViewHelperTest extends PHPUnit\Framework\TestCase
         $entity->expects($this->once())
             ->method('getId')
             ->willReturn(1);
-        $collection = $this->createMock(PropertyCollection::class);
 
+        $collection = $this->createMock(PropertyCollection::class);
         $collection->expects($this->once())
             ->method('getAllProperties')
             ->willReturn([$entity]);
