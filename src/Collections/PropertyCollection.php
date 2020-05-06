@@ -17,11 +17,11 @@ class PropertyCollection implements IPropertyCollection
         $this->allProperties = $properties;
     }
 
-    private function propertyCheck($properties)
+    private function propertyCheck(array $properties)
     {
         foreach ($properties as $property) {
             if (!($property instanceof IPropertyEntity)) {
-                throw new \Exception('Array must only contain instances of PropertyEntity');
+                throw new \Exception('Array must only contain Objects that implement the IPropertyEntity interface');
             }
         }
     }
