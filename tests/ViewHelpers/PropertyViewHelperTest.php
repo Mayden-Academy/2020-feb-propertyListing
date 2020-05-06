@@ -4,6 +4,7 @@ require('vendor/autoload.php');
 
 use ArmadilloEstates\ViewHelpers\PropertyViewHelper;
 use ArmadilloEstates\Entities\PropertyEntity;
+use ArmadilloEstates\Collections\PropertyCollection;
 
 class PropertyViewHelperTest extends PHPUnit\Framework\TestCase
 {
@@ -92,7 +93,7 @@ class PropertyViewHelperTest extends PHPUnit\Framework\TestCase
 
     public function testSuccessDisplayAll()
     {
-        $entity = $this->createMock(\ArmadilloEstates\Entities\PropertyEntity::class);
+        $entity = $this->createMock(PropertyEntity::class);
 
         $entity->expects($this->once())
             ->method('getAddress1')
@@ -121,7 +122,7 @@ class PropertyViewHelperTest extends PHPUnit\Framework\TestCase
         $entity->expects($this->once())
             ->method('getId')
             ->willReturn(1);
-        $collection = $this->createMock(\ArmadilloEstates\Collections\PropertyCollection::class);
+        $collection = $this->createMock(PropertyCollection::class);
 
         $collection->expects($this->once())
             ->method('getAllProperties')
@@ -148,7 +149,7 @@ class PropertyViewHelperTest extends PHPUnit\Framework\TestCase
 
     public function testEmptyCollectionDisplayAll()
     {
-        $collection = $this->createMock(\ArmadilloEstates\Collections\PropertyCollection::class);
+        $collection = $this->createMock(PropertyCollection::class);
 
         $collection->expects($this->once())
             ->method('getAllProperties')
