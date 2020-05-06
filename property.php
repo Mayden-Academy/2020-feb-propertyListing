@@ -28,7 +28,7 @@ try {
     <link href="https://fonts.googleapis.com/css?family=Spartan&display=swap" rel="stylesheet"/>
 </head>
 <body>
-    <nav class="navbar navbar-light background-color mb-4">
+    <nav class="navbar navbar-light mb-4">
         <div class="container">
             <a class="navbar-brand" href="index.php">
                 <img src="./img/logo.png" class="d-inline-block align-top logoimg" alt="Logo">

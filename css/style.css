@@ -33,11 +33,8 @@ body {
     width: 50px;
 }
 
-.background-color {
+.navbar {
     background-color: #8892bf;
     border-bottom: solid;
-}
-
-.navbar {
     color: #e2e4ef;
 }
