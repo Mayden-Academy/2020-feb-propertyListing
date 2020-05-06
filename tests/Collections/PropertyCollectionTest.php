@@ -3,6 +3,9 @@
 require('vendor/autoload.php');
 
 use ArmadilloEstates\Collections\PropertyCollection;
+use ArmadilloEstates\Interfaces\IPropertyCollection;
+use ArmadilloEstates\Interfaces\IPropertyEntity;
+
 
 class PropertyCollectionTest extends PHPUnit\Framework\TestCase
 {
@@ -18,7 +21,17 @@ class PropertyCollectionTest extends PHPUnit\Framework\TestCase
     {
         $entity = $this->createMock(\ArmadilloEstates\Entities\PropertyEntity::class);
         $array = [$entity, $entity, $entity, 'Fail'];
-        $this->expectExceptionMessage('Array must only contain instances of PropertyEntity');
+        $this->expectExceptionMessage('Array must only contain Objects that implement the IPropertyEntity interface');
         $collection = new PropertyCollection($array);
+    }
+
+    public function testSuccessGetAllProperties()
+    {
+        $entity = $this->createMock(\ArmadilloEstates\Entities\PropertyEntity::class);
+        $array = [$entity, $entity, $entity];
+        $collection = new PropertyCollection($array);
+
+        $expected = $collection->getAllProperties();
+        $this->assertEquals($expected, $array);
     }
 }
