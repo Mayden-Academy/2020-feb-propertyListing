@@ -38,18 +38,22 @@ class PropertyViewHelperTest extends PHPUnit\Framework\TestCase
             ->method('getAllProperties')
             ->willReturn([$entity]);
 
-        $expected = '<div class="col-4 text-center mb-4"><div class="card"><h5 class="card-title pt-3">Address1 Address2<br>Town</h5><img class="card-img-top cardImg" src=Image alt="Card image cap"><div class="card-body"><p class="card-text">Sale</p><p class="card-text">Sold</p><a href="#" class="btn btn-primary">View More...</a></div></div></div>';
+        $expected = '<div class="col-4 text-center mb-4"><div class="card">';
+        $expected .= '<h5 class="card-title pt-3">Address1 Address2<br>Town</h5>';
+        $expected .= '<img class="card-img-top cardImg" src=Image alt="Card image cap"><div class="card-body">';
+        $expected .= '<p class="card-text">Sale</p><p class="card-text">Sold</p>';
+        $expected .= '<a href="#" class="btn btn-primary">View More...</a></div></div></div>';
 
         $this->assertEquals($expected, PropertyViewHelper::displayAll($collection));
     }
 
     public function testIncorrectEntityPassedDisplayAll()
     {
-        $stdclass = $this->createMock(stdClass::class);
+        $stdClass = $this->createMock(stdClass::class);
 
         $this->expectException(TypeError::class);
 
-        PropertyViewHelper::displayAll($stdclass);
+        PropertyViewHelper::displayAll($stdClass);
     }
 
     public function testEmptyCollectionDisplayAll()
@@ -58,6 +62,7 @@ class PropertyViewHelperTest extends PHPUnit\Framework\TestCase
         $collection->expects($this->once())
             ->method('getAllProperties')
             ->willReturn([]);
+
 
         $this->assertEquals('', PropertyViewHelper::displayAll($collection));
     }
