@@ -16,3 +16,4 @@ Link to the file architecture we created:
 
 [file architecture](https://github.com/Mayden-Academy/2020-feb-propertyListing/blob/addWireframe/Armadillo%20Estates%20File%20Architecture.png)
 
+***
