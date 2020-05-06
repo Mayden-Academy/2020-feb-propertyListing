@@ -63,7 +63,6 @@ class PropertyViewHelperTest extends PHPUnit\Framework\TestCase
             ->method('getAllProperties')
             ->willReturn([]);
 
-
         $this->assertEquals('', PropertyViewHelper::displayAll($collection));
     }
 }
