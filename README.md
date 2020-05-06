@@ -6,7 +6,9 @@
 
 Link to the wireframe we created:
 
-[wireframe](https://github.com/Mayden-Academy/2020-feb-propertyListing/blob/addWireframe/Armadillo%20Estates%20Wireframe.pdf)
+![image of wireframe page 1](Armadillo%20Estates%20Wireframe p1.png)
+![image of wireframe page 2](Armadillo%20Estates%20Wireframe p2.png)
+![image of wireframe page 3](Armadillo%20Estates%20Wireframe p3.png)
 
 ***
 
@@ -14,6 +16,6 @@ Link to the wireframe we created:
 
 Link to the file architecture we created:
 
-[file architecture](https://github.com/Mayden-Academy/2020-feb-propertyListing/blob/addWireframe/Armadillo%20Estates%20File%20Architecture.png)
+![image of file architecture](Armadillo%20Estates%20File%20Architecture.png)
 
 ***
